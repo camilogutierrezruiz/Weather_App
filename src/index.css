@@ -1,13 +1,53 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, p {
+  color: white;
+  font-weight: 300;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.App.bg__clear {
+  background-color: rgb(12, 158, 243);
+}
+
+.App.bg__clouds {
+  background-color: rgb(76, 121, 146);
+}
+
+.App.bg__drizzle {
+  background-color: rgb(48, 36, 63);
+}
+
+.App.bg__rain {
+  background-color: rgb(155, 35, 35);
+}
+
+.App.bg__thunderstorm {
+  background-color: rgb(243, 247, 10);
+}
+
+.App.bg__snow {
+  background-color: rgb(207, 221, 230);
+}
+
+.App.bg__atmosphere {
+  background-color: rgb(99, 104, 107);
 }
