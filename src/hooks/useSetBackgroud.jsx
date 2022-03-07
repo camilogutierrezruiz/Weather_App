@@ -26,7 +26,7 @@ const useSetBackgroud = () => {
   let background = useSetBackgroud(weatherID);
 
   return {
-    background
+    background,
   };
 };
 

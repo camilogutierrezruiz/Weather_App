@@ -11,7 +11,6 @@ const WeatherCardInfo = () => {
     city,
     country,
     temp,
-    feelsTemp,
     maxTemp,
     minTemp,
     humidity,
@@ -25,7 +24,6 @@ const WeatherCardInfo = () => {
     hrs,
     mnts,
     sec,
-    year,
     month,
     weekDay,
     day
@@ -66,28 +64,77 @@ const WeatherCardInfo = () => {
   };
 
   return (
-    <div className={background}>
-      <p>{`${city}, ${country}`}</p>
-      <p>{`${changeUnits(temp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
-      <p>{`${changeUnits(feelsTemp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
-      <p>{`${changeUnits(maxTemp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
-      <p>{`${changeUnits(minTemp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
-      <p>{`${humidity}%`}</p>
-      <p>{`${changeWindSpeedUnits(windSpeed)} km/h`}</p>
-      <p>{weatherMain}</p>
-      <p>{weatherDescription}</p>
-      <img src={weatherIcon} alt="" />
-      <h2>{`${hrs}:${mnts}:${sec}`}</h2>
-      <p>{`${weekDay}, ${day} ${month} ${year}`}</p>
-      <ButtonToogle
-        ButtonTextContent='celcius'
-        IsClicked={toCelcius}
-      />
-      <ButtonToogle
-        ButtonTextContent='fahrenheit'
-        IsClicked={toFahrenheit}
-      />
-    </div>
+    <section className={`weather__card ${background}`}>
+      <section className={`card`}>
+        <main className={`card__main`}>
+          <section className={`card__main--location`}>
+            <span><i class="fa-solid fa-earth-americas"></i></span>
+            <p>{`${city}, ${country}`}</p>
+          </section>
+          <section className={`card__main--info`}>
+            <section className={`card__main--weather`}>
+              <p>{weatherMain}</p>
+            </section>
+            <section className={`card__main--footer`}>
+              <section className={`card__main--temp`}>
+                <h1 className={`card__temperature`}>{changeUnits(temp)}</h1>
+                <div className={`card__main--tempAux`}>
+                  <p className={`card__main--deg`}>O</p>
+                  <p className={`card__main--units`}>{`${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
+                </div>
+              </section>
+              <section className={`card__main--date`}>
+                <h2 className={`card__hour`}>{`${hrs}:${mnts}:${sec}`}</h2>
+                <p className={`card__date`}>{`${weekDay}, ${day} ${month}`}</p>
+              </section>
+            </section>
+          </section>
+        </main>
+        <div className={`card__separator`}></div>
+        <aside className={`card__aside`}>
+          <section className={`card__aside--weather`}>
+            <h2 className={`card__aside--description`}>{weatherDescription}</h2>
+            <div className={`card__aside--weatherIcon`}>
+              <img src={weatherIcon} alt="" />
+            </div>
+          </section>
+          <section className={`card__aside--info`}>
+            <div>
+              <span><i class="fa-solid fa-temperature-full"></i></span>
+              <p>{`${changeUnits(maxTemp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
+            </div>
+            <div>
+              <span><i class="fa-solid fa-temperature-quarter"></i></span>
+              <p>{`${changeUnits(minTemp)}°${isCelcius ? "C" : `${isFahrenheit ? "F" : "K"}`}`}</p>
+            </div>
+            <div>
+              <span><i class="fa-solid fa-droplet"></i></span>
+              <p>{`${humidity}%`}</p>
+            </div>
+            <div>
+              <span><i class="fa-solid fa-wind"></i></span>
+              <p>{`${changeWindSpeedUnits(windSpeed)}km/h`}</p>
+            </div>
+          </section>
+          <section className={`card__aside--buttons`}>
+            <ButtonToogle
+              ButtonClass={`button__change--temp`}
+              ButtonTextClass={isCelcius ? `button__text celcius active` : `button__text celcius`}
+              ButtonTextContent='°C'
+              IsClicked={toCelcius}
+            />
+            <div className={`button__separator`}></div>
+            <ButtonToogle
+              ButtonClass={`button__change--temp`}
+              ButtonTextClass={isFahrenheit ? `button__text fahrenheit active` : `button__text fahrenheit`}
+              ButtonTextContent='°F'
+              IsClicked={toFahrenheit}
+            />
+          </section>
+        </aside>
+      </section>
+
+    </section>
   );
 };
 
