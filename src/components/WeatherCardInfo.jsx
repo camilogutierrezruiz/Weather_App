@@ -31,7 +31,7 @@ const WeatherCardInfo = () => {
 
   const { background } = useSetBackgroud();
 
-  const [isCelcius, setIsCelcius] = useState(false);
+  const [isCelcius, setIsCelcius] = useState(true);
   const [isFahrenheit, setIsFahrenheit] = useState(false);
 
 
