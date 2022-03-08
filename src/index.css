@@ -99,6 +99,7 @@ h1, h2, h3, p, i, img {
   width: 550px;
   height: 350px;
   border-radius: 10px;
+  background-image: url('./assets/back.gif');
   box-shadow: 0px 10px 30px #10101a, inset 0 0 30px #0002;
   background-repeat: no-repeat;
   background-position: center;
