@@ -334,6 +334,7 @@ h1, h2, h3, p, i, img {
   width: 100px;
   height: 100px;
   margin: 0 auto;
+  background-image: url('./assets/waitingWeatherState.gif');
 }
 
 .card__aside--weatherIcon>img {
