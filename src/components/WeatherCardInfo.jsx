@@ -4,6 +4,7 @@ import useCurrentTime from '../hooks/useCurrentTime';
 import useCurrentWeather from '../hooks/useCurrentWeather';
 import ButtonToogle from './ButtonToogle'
 import useSetBackgroud from '../hooks/useSetBackgroud';
+import waitingWeatherState from '../assets/waitingWeatherState.gif'
 import '../index.css'
 
 const WeatherCardInfo = () => {
@@ -95,7 +96,7 @@ const WeatherCardInfo = () => {
           <section className={`card__aside--weather`}>
             <h2 className={`card__aside--description`}>{weatherDescription}</h2>
             <div className={`card__aside--weatherIcon`}>
-              <img src={weatherIcon} alt="" />
+              <img src={weatherIcon ? weatherIcon : waitingWeatherState} alt="" />
             </div>
           </section>
           <section className={`card__aside--info`}>
