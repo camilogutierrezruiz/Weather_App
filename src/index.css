@@ -165,7 +165,7 @@ h1, h2, h3, p, i, img {
 /* #region CARD MAIN */
 
 .card__main {
-  width: 65%;
+  width: 67%;
   height: 100%;
   padding-right: 15px;
   display: flex;
@@ -229,7 +229,7 @@ h1, h2, h3, p, i, img {
 }
 
 .card__main--temp {
-  width: 60%;
+  width: auto;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -303,7 +303,7 @@ h1, h2, h3, p, i, img {
 /* #region CARD ASIDE */
 
 .card__aside {
-  width: 35%;
+  width: 33%;
   height: 100%;
   padding-left: 15px;
   display: flex;
