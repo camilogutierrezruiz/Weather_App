@@ -43,7 +43,7 @@ const useCurrentWeather = () => {
     return (
       navigator.geolocation.getCurrentPosition(success)
     );
-  }, [icon]);
+  }, [temp]);
 
   return {
     city,
